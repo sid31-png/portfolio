@@ -38,7 +38,9 @@ body{transition:background .4s var(--ease),color .4s var(--ease)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+  /* Hanken Grotesk = closest free match to Qatar Airways' proprietary "Jotia".
+     Swap in the licensed Jotia woff2 via @font-face for an exact match. */
+  font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   background:var(--bg);
   color:var(--ink);
   line-height:1.5;
