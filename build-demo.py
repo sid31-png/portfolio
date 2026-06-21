@@ -9,6 +9,7 @@ root = pathlib.Path(__file__).parent
 html = (root / "index.html").read_text(encoding="utf-8")
 css = (root / "css/styles.css").read_text(encoding="utf-8")
 js = (root / "js/script.js").read_text(encoding="utf-8")
+i18n = (root / "js/i18n.js").read_text(encoding="utf-8")
 
 def data_uri(path, mime):
     b = (root / path).read_bytes()
@@ -20,6 +21,7 @@ html = html.replace("assets/Ahmed-Bouamama-CV.pdf", data_uri("assets/Ahmed-Bouam
 
 # Inline CSS + JS
 html = html.replace('<link rel="stylesheet" href="css/styles.css" />', f"<style>\n{css}\n</style>")
+html = html.replace('<script src="js/i18n.js"></script>', f"<script>\n{i18n}\n</script>")
 html = html.replace('<script src="js/script.js"></script>', f"<script>\n{js}\n</script>")
 
 out = root / "demo.html"

@@ -7,11 +7,10 @@
   <meta name="description" content="Ahmed Bouamama — Project Manager & Front-End Designer based in Doha. Blending business operations, creative technology and AI to build and scale the tools behind the operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- Progress bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- Navigation -->
@@ -19,17 +18,22 @@
     <div class="nav__inner">
       <a href="#top" class="nav__logo">Ahmed&nbsp;Bouamama</a>
       <nav class="nav__links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#services">Services</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#work" data-i18n="nav_work">Work</a>
+        <a href="#experience" data-i18n="nav_exp">Experience</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
       </nav>
       <div class="nav__actions">
+        <div class="lang" id="lang">
+          <button data-lang="en" class="is-active">EN</button>
+          <button data-lang="fr">FR</button>
+          <button data-lang="ar">ع</button>
+        </div>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
           <span class="theme-toggle__icon">☀</span>
         </button>
-        <a href="#contact" class="btn btn--pill nav__cta">Let's talk</a>
+        <a href="#contact" class="btn btn--pill nav__cta" data-i18n="nav_cta">Let's talk</a>
       </div>
       <button class="nav__burger" id="navBurger" aria-label="Menu">
         <span></span><span></span>
@@ -42,21 +46,19 @@
     <section class="hero">
       <div class="hero__glow"></div>
       <div class="container">
-        <p class="hero__eyebrow reveal">Doha, Qatar · Available for select projects</p>
-        <h1 class="hero__title reveal">
-          Project Manager &amp;<br />
-          <span class="grad">Front-End Designer</span>
+        <p class="hero__eyebrow reveal" data-i18n="hero_eyebrow">Doha, Qatar · Available for select projects</p>
+        <h1 class="hero__title reveal" data-i18n-html="hero_title">
+          Project Manager &amp;<br /><span class="grad">Front-End Designer</span>
         </h1>
-        <p class="hero__lead reveal">
+        <p class="hero__lead reveal" data-i18n-html="hero_lead">
           I blend business operations, marketing and creative technology — turning
           ideas into clean interfaces, websites and AI-powered tools that
           <em>scale the work behind the operations.</em>
         </p>
         <div class="hero__cta reveal">
-          <a href="#work" class="btn btn--dark">View selected work</a>
-          <a href="assets/Ahmed-Bouamama-CV.pdf" download class="btn btn--ghost">Download CV ↓</a>
+          <a href="#work" class="btn btn--dark" data-i18n="hero_cta1">View selected work</a>
+          <a href="assets/Ahmed-Bouamama-CV.pdf" download class="btn btn--ghost" data-i18n="hero_cta2">Download CV ↓</a>
         </div>
-
         <div class="hero__marquee reveal">
           <div class="marquee__track">
             <span>Figma</span><span>·</span><span>Framer</span><span>·</span>
@@ -77,19 +79,19 @@
       <div class="container stats__grid">
         <div class="stat reveal">
           <span class="stat__num" data-count="70" data-suffix="%">0</span>
-          <span class="stat__label">Customer base growth</span>
+          <span class="stat__label" data-i18n="stat1">Customer base growth</span>
         </div>
         <div class="stat reveal">
           <span class="stat__num" data-count="500" data-suffix="+">0</span>
-          <span class="stat__label">Government mandates managed</span>
+          <span class="stat__label" data-i18n="stat2">Government mandates managed</span>
         </div>
         <div class="stat reveal">
           <span class="stat__num" data-count="20" data-suffix="%">0</span>
-          <span class="stat__label">Faster processing time</span>
+          <span class="stat__label" data-i18n="stat3">Faster processing time</span>
         </div>
         <div class="stat reveal">
           <span class="stat__num" data-count="15" data-suffix="+">0</span>
-          <span class="stat__label">Large-scale events led</span>
+          <span class="stat__label" data-i18n="stat4">Large-scale events led</span>
         </div>
       </div>
     </section>
@@ -100,29 +102,19 @@
         <div class="about__media reveal">
           <img src="assets/ahmed-headshot.jpg" alt="Ahmed Bouamama" />
           <div class="about__badge">
-            <strong>5+ yrs</strong>
-            <span>ops · sales · creative tech</span>
+            <strong data-i18n="about_badge_n">5+ yrs</strong>
+            <span data-i18n="about_badge_t">ops · sales · creative tech</span>
           </div>
         </div>
         <div class="about__text reveal">
-          <p class="section__eyebrow">About</p>
-          <h2 class="section__title">A manager who designs<br />— and a designer who ships.</h2>
-          <p>
-            I'm Ahmed, based in Doha. For five years I've managed projects across
-            events, sales, business development and government relations in Qatar
-            and internationally — cutting processing times, reducing costs and
-            growing customer bases.
-          </p>
-          <p>
-            Somewhere along the way I fell for the tools behind the work. Today I
-            run projects end-to-end, design interfaces, build websites and wire up
-            AI &amp; no-code automations — the same ownership I bring to operations,
-            applied to product and design.
-          </p>
+          <p class="section__eyebrow" data-i18n="nav_about">About</p>
+          <h2 class="section__title" data-i18n-html="about_title">A manager who designs<br />— and a designer who ships.</h2>
+          <p data-i18n="about_p1">I'm Ahmed, based in Doha. For five years I've managed projects across events, sales, business development and government relations in Qatar and internationally — cutting processing times, reducing costs and growing customer bases.</p>
+          <p data-i18n="about_p2">Somewhere along the way I fell for the tools behind the work. Today I run projects end-to-end, design interfaces, build websites and wire up AI &amp; no-code automations — the same ownership I bring to operations, applied to product and design.</p>
           <ul class="about__langs">
-            <li>Arabic <span>Native</span></li>
-            <li>English <span>Fluent</span></li>
-            <li>French <span>Fluent</span></li>
+            <li data-i18n-html="about_lang1">Arabic <span>Native</span></li>
+            <li data-i18n-html="about_lang2">English <span>Fluent</span></li>
+            <li data-i18n-html="about_lang3">French <span>Fluent</span></li>
           </ul>
         </div>
       </div>
@@ -132,19 +124,18 @@
     <section class="section section--alt" id="skills">
       <div class="container">
         <header class="section__head reveal">
-          <p class="section__eyebrow">Skills</p>
-          <h2 class="section__title">Two sides, one operator.</h2>
-          <p class="section__sub">Business judgement that knows what to build — and the hands to build it.</p>
+          <p class="section__eyebrow" data-i18n="nav_skills">Skills</p>
+          <h2 class="section__title" data-i18n="skills_title">Two sides, one operator.</h2>
+          <p class="section__sub" data-i18n="skills_sub">Business judgement that knows what to build — and the hands to build it.</p>
         </header>
-
         <div class="skills__grid">
           <div class="skillset reveal">
             <div class="skillset__head">
               <span class="skillset__icon">◎</span>
-              <h3>Business &amp; Operations</h3>
+              <h3 data-i18n="skills_set1">Business &amp; Operations</h3>
             </div>
             <div class="chips">
-              <span>Project Management</span>
+              <span data-i18n="sk_pm">Project Management</span>
               <span>Business Development</span>
               <span>Account &amp; Key Account Mgmt</span>
               <span>Event &amp; Project Delivery</span>
@@ -155,11 +146,10 @@
               <span>Client Retention</span>
             </div>
           </div>
-
           <div class="skillset reveal">
             <div class="skillset__head">
               <span class="skillset__icon">✦</span>
-              <h3>AI &amp; Creative Technology</h3>
+              <h3 data-i18n="skills_set2">AI &amp; Creative Technology</h3>
             </div>
             <div class="chips">
               <span>UI / UX &amp; Web Design</span>
@@ -176,16 +166,59 @@
       </div>
     </section>
 
-    <!-- WORK -->
-    <section class="section" id="work">
+    <!-- IMPACT -->
+    <section class="section" id="impact">
       <div class="container">
         <header class="section__head reveal">
-          <p class="section__eyebrow">Selected work</p>
-          <h2 class="section__title">Projects I owned, designed<br />and shipped end-to-end.</h2>
+          <p class="section__eyebrow" data-i18n="impact_eyebrow">Impact</p>
+          <h2 class="section__title" data-i18n="impact_title">Numbers I'm proud of.</h2>
+          <p class="section__sub" data-i18n="impact_sub">Real outcomes from owning projects end-to-end.</p>
         </header>
+        <div class="impact__list">
+          <div class="bar reveal" data-val="70">
+            <div class="bar__top">
+              <span class="bar__label" data-i18n="impact_l1">Customer base growth</span>
+              <span class="bar__val">0%</span>
+            </div>
+            <div class="bar__track"><div class="bar__fill"></div></div>
+            <p class="bar__note" data-i18n="impact_n1">Outdoor campaigns &amp; key accounts — Cat Planet</p>
+          </div>
+          <div class="bar reveal" data-val="90">
+            <div class="bar__top">
+              <span class="bar__label" data-i18n="impact_l2">Client retention</span>
+              <span class="bar__val">0%</span>
+            </div>
+            <div class="bar__track"><div class="bar__fill"></div></div>
+            <p class="bar__note" data-i18n="impact_n2">Consistent follow-up &amp; relationship management</p>
+          </div>
+          <div class="bar reveal" data-val="20">
+            <div class="bar__top">
+              <span class="bar__label" data-i18n="impact_l3">Faster government processing</span>
+              <span class="bar__val">0%</span>
+            </div>
+            <div class="bar__track"><div class="bar__fill"></div></div>
+            <p class="bar__note" data-i18n="impact_n3">Process redesign across 500+ mandates</p>
+          </div>
+          <div class="bar reveal" data-val="15">
+            <div class="bar__top">
+              <span class="bar__label" data-i18n="impact_l4">Project cost savings</span>
+              <span class="bar__val">0%</span>
+            </div>
+            <div class="bar__track"><div class="bar__fill"></div></div>
+            <p class="bar__note" data-i18n="impact_n4">Vendor &amp; logistics coordination — 15+ events</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- WORK -->
+    <section class="section section--alt" id="work">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__eyebrow" data-i18n="work_eyebrow">Selected work</p>
+          <h2 class="section__title" data-i18n-html="work_title">Projects I owned, designed<br />and shipped end-to-end.</h2>
+        </header>
         <div class="work__grid">
-          <!-- Featured: RCH Saudi -->
           <a href="#rch" class="card card--feature reveal">
             <div class="card__media card__media--rch">
               <div class="browser float">
@@ -199,34 +232,27 @@
             </div>
             <div class="card__body">
               <div class="card__meta"><span>Web Design</span><span>Front-End</span><span>Brand</span></div>
-              <h3 class="card__title">RCH Saudi — Corporate Website</h3>
-              <p class="card__text">Concept, UI/UX and front-end design for RCH's expansion into the Saudi market — built and shipped solo.</p>
-              <span class="card__link">Read the case study →</span>
+              <h3 class="card__title" data-i18n="work_c1_t">RCH Saudi — Corporate Website</h3>
+              <p class="card__text" data-i18n="work_c1_x">Concept, UI/UX and front-end design for RCH's expansion into the Saudi market — built and shipped solo.</p>
+              <span class="card__link" data-i18n="work_c1_l">Read the case study →</span>
             </div>
           </a>
-
-          <!-- Other projects -->
           <div class="card reveal">
-            <div class="card__media card__media--ai">
-              <div class="orb"></div>
-            </div>
+            <div class="card__media card__media--ai"><div class="orb"></div></div>
             <div class="card__body">
               <div class="card__meta"><span>Generative AI</span><span>Automation</span></div>
-              <h3 class="card__title">AI Ops Toolkit</h3>
-              <p class="card__text">No-code automations and AI agents that cut manual government processing time by 20%.</p>
-              <span class="card__link">Concept · ongoing</span>
+              <h3 class="card__title" data-i18n="work_c2_t">AI Ops Toolkit</h3>
+              <p class="card__text" data-i18n="work_c2_x">No-code automations and AI agents that cut manual government processing time by 20%.</p>
+              <span class="card__link" data-i18n="work_c2_l">Concept · ongoing</span>
             </div>
           </div>
-
           <div class="card reveal">
-            <div class="card__media card__media--event">
-              <div class="event-grid"><i></i><i></i><i></i><i></i></div>
-            </div>
+            <div class="card__media card__media--event"><div class="event-grid"><i></i><i></i><i></i><i></i></div></div>
             <div class="card__body">
               <div class="card__meta"><span>Event Design</span><span>Direction</span></div>
-              <h3 class="card__title">Live Events — 15+</h3>
-              <p class="card__text">Identity, signage and stakeholder experience for 15+ large-scale events, 20+ vendors coordinated.</p>
-              <span class="card__link">Case studies on request</span>
+              <h3 class="card__title" data-i18n="work_c3_t">Live Events — 15+</h3>
+              <p class="card__text" data-i18n="work_c3_x">Identity, signage and stakeholder experience for 15+ large-scale events, 20+ vendors coordinated.</p>
+              <span class="card__link" data-i18n="work_c3_l">Case studies on request</span>
             </div>
           </div>
         </div>
@@ -234,163 +260,91 @@
     </section>
 
     <!-- RCH CASE STUDY -->
-    <section class="section section--alt" id="rch">
+    <section class="section" id="rch">
       <div class="container">
         <header class="section__head reveal">
-          <p class="section__eyebrow">Case study · 01</p>
-          <h2 class="section__title">RCH Saudi Website</h2>
-          <p class="section__sub">Designing and building the digital front door for RCH's launch in Saudi Arabia.</p>
+          <p class="section__eyebrow" data-i18n="rch_eyebrow">Case study · 01</p>
+          <h2 class="section__title" data-i18n="rch_title">RCH Saudi Website</h2>
+          <p class="section__sub" data-i18n="rch_sub">Designing and building the digital front door for RCH's launch in Saudi Arabia.</p>
         </header>
 
+        <!-- Before / After slider -->
+        <div class="compare reveal" id="compare">
+          <div class="compare__panel compare__after">
+            <span class="compare__tag" data-i18n="rch_after">After — my redesign</span>
+            <div class="compare__mock compare__mock--new">
+              <p class="compare__brand">RCH</p>
+              <p class="compare__line"></p><p class="compare__line short"></p>
+              <span class="compare__btn">Get started</span>
+            </div>
+          </div>
+          <div class="compare__panel compare__before" id="compareBefore">
+            <span class="compare__tag" data-i18n="rch_before">Before — no presence</span>
+            <div class="compare__mock compare__mock--old">
+              <p class="compare__oldtitle">RCH BUSINESS SOLUTIONS</p>
+              <p class="compare__oldtext">Welcome to our website. Contact us by phone.</p>
+            </div>
+          </div>
+          <div class="compare__handle" id="compareHandle"><span></span></div>
+        </div>
+        <p class="compare__hint" data-i18n="rch_hint">Drag the handle to compare · placeholder visuals — swap in real screenshots</p>
+
         <div class="case__grid">
-          <div class="case__col reveal">
-            <span class="case__k">Role</span>
-            <p>Designer & Front-End Designer — solo</p>
-          </div>
-          <div class="case__col reveal">
-            <span class="case__k">Scope</span>
-            <p>Concept · UI/UX · Front-end · Copy direction</p>
-          </div>
-          <div class="case__col reveal">
-            <span class="case__k">Tools</span>
-            <p>Figma · Framer · Higgsfield · Claude</p>
-          </div>
-          <div class="case__col reveal">
-            <span class="case__k">Year</span>
-            <p>2025</p>
-          </div>
+          <div class="case__col reveal"><span class="case__k" data-i18n="rch_k1">Role</span><p data-i18n="rch_v1">Designer & Front-End Designer — solo</p></div>
+          <div class="case__col reveal"><span class="case__k" data-i18n="rch_k2">Scope</span><p data-i18n="rch_v2">Concept · UI/UX · Front-end · Copy direction</p></div>
+          <div class="case__col reveal"><span class="case__k" data-i18n="rch_k3">Tools</span><p>Figma · Framer · Higgsfield · Claude</p></div>
+          <div class="case__col reveal"><span class="case__k" data-i18n="rch_k4">Year</span><p>2025</p></div>
         </div>
 
         <div class="case__block reveal">
-          <h3>The idea was mine.</h3>
-          <p>
-            RCH needed a credible presence to enter the Saudi market. I owned the whole thing —
-            from positioning and information architecture to the visual language, the
-            components and the live build. Every decision below started as my idea and
-            was handled hands-on, not handed off.
-          </p>
+          <h3 data-i18n="rch_block_h">The idea was mine.</h3>
+          <p data-i18n="rch_block_p">RCH needed a credible presence to enter the Saudi market. I owned the whole thing — from positioning and information architecture to the visual language, the components and the live build. Every decision below started as my idea and was handled hands-on, not handed off.</p>
         </div>
 
         <div class="case__list">
-          <div class="case__item reveal">
-            <span class="case__num">01</span>
-            <div>
-              <h4>Positioning & structure</h4>
-              <p>Defined who the site speaks to, mapped the journey for government & corporate clients, and structured the pages around trust and compliance.</p>
-            </div>
-          </div>
-          <div class="case__item reveal">
-            <span class="case__num">02</span>
-            <div>
-              <h4>Visual system</h4>
-              <p>Built a clean, Apple-inspired design system in Figma — typography scale, spacing, colour and reusable components for a consistent look across the site.</p>
-            </div>
-          </div>
-          <div class="case__item reveal">
-            <span class="case__num">03</span>
-            <div>
-              <h4>Front-end build</h4>
-              <p>Brought the design to life in Framer with responsive layouts, smooth interactions and fast load — no developer hand-off needed.</p>
-            </div>
-          </div>
-          <div class="case__item reveal">
-            <span class="case__num">04</span>
-            <div>
-              <h4>AI-assisted content</h4>
-              <p>Used Higgsfield and Claude to generate visuals and craft sharp, on-brand copy at speed.</p>
-            </div>
-          </div>
+          <div class="case__item reveal"><span class="case__num">01</span><div><h4 data-i18n="rch_i1_h">Positioning & structure</h4><p data-i18n="rch_i1_p">Defined who the site speaks to, mapped the journey for government & corporate clients, and structured the pages around trust and compliance.</p></div></div>
+          <div class="case__item reveal"><span class="case__num">02</span><div><h4 data-i18n="rch_i2_h">Visual system</h4><p data-i18n="rch_i2_p">Built a clean, Apple-inspired design system in Figma — typography scale, spacing, colour and reusable components for a consistent look across the site.</p></div></div>
+          <div class="case__item reveal"><span class="case__num">03</span><div><h4 data-i18n="rch_i3_h">Front-end build</h4><p data-i18n="rch_i3_p">Brought the design to life in Framer with responsive layouts, smooth interactions and fast load — no developer hand-off needed.</p></div></div>
+          <div class="case__item reveal"><span class="case__num">04</span><div><h4 data-i18n="rch_i4_h">AI-assisted content</h4><p data-i18n="rch_i4_p">Used Higgsfield and Claude to generate visuals and craft sharp, on-brand copy at speed.</p></div></div>
         </div>
 
         <div class="case__cta reveal">
-          <p>Want the full walkthrough, the live link and the before/after?</p>
-          <a href="#contact" class="btn btn--light">Request the deck</a>
+          <p data-i18n="rch_cta_p">Want the full walkthrough, the live link and the before/after?</p>
+          <a href="#contact" class="btn btn--light" data-i18n="rch_cta_b">Request the deck</a>
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="section" id="experience">
+    <section class="section section--alt" id="experience">
       <div class="container">
         <header class="section__head reveal">
-          <p class="section__eyebrow">Experience</p>
-          <h2 class="section__title">The path so far.</h2>
+          <p class="section__eyebrow" data-i18n="nav_exp">Experience</p>
+          <h2 class="section__title" data-i18n="exp_title">The path so far.</h2>
         </header>
         <div class="timeline">
-          <div class="tl reveal">
-            <div class="tl__date">May 2025 — Present</div>
-            <div class="tl__body">
-              <h3>Account &amp; Event Manager</h3>
-              <p class="tl__org">RCH Business Solutions · Qatar</p>
-              <p>500+ government mandates at 100% compliance, processing time cut 20%. Led 15+ large-scale events, 20+ staff/vendors, up to 15% cost savings.</p>
-            </div>
-          </div>
-          <div class="tl reveal">
-            <div class="tl__date">Nov 2024 — May 2025</div>
-            <div class="tl__body">
-              <h3>Client Solutions &amp; Sales Partner</h3>
-              <p class="tl__org">Cat Planet · Doha, Qatar</p>
-              <p>Key supplier & corporate accounts, international logistics and sales campaigns — customer base +70%, 90% client retention.</p>
-            </div>
-          </div>
-          <div class="tl reveal">
-            <div class="tl__date">Mar 2020 — Jul 2022</div>
-            <div class="tl__body">
-              <h3>Business Development &amp; Client Support</h3>
-              <p class="tl__org">Vet Plus Distribution · Algeria</p>
-              <p>Advised on 150+ products — repeat orders +35%, adoption +25%, delays −20%, satisfaction above 90%.</p>
-            </div>
-          </div>
-          <div class="tl reveal">
-            <div class="tl__date">Education</div>
-            <div class="tl__body">
-              <h3>Master's & Bachelor's in Agronomy</h3>
-              <p class="tl__org">Tissemsilt University · Algeria</p>
-              <p>Professional Training in Marketing — FORCOM, Algeria.</p>
-            </div>
-          </div>
+          <div class="tl reveal"><div class="tl__date" data-i18n="exp_d1">May 2025 — Present</div><div class="tl__body"><h3 data-i18n="exp_r1">Account &amp; Event Manager</h3><p class="tl__org">RCH Business Solutions · Qatar</p><p data-i18n="exp_x1">500+ government mandates at 100% compliance, processing time cut 20%. Led 15+ large-scale events, 20+ staff/vendors, up to 15% cost savings.</p></div></div>
+          <div class="tl reveal"><div class="tl__date" data-i18n="exp_d2">Nov 2024 — May 2025</div><div class="tl__body"><h3 data-i18n="exp_r2">Client Solutions &amp; Sales Partner</h3><p class="tl__org">Cat Planet · Doha, Qatar</p><p data-i18n="exp_x2">Key supplier & corporate accounts, international logistics and sales campaigns — customer base +70%, 90% client retention.</p></div></div>
+          <div class="tl reveal"><div class="tl__date" data-i18n="exp_d3">Mar 2020 — Jul 2022</div><div class="tl__body"><h3 data-i18n="exp_r3">Business Development &amp; Client Support</h3><p class="tl__org">Vet Plus Distribution · Algeria</p><p data-i18n="exp_x3">Advised on 150+ products — repeat orders +35%, adoption +25%, delays −20%, satisfaction above 90%.</p></div></div>
+          <div class="tl reveal"><div class="tl__date" data-i18n="exp_d4">Education</div><div class="tl__body"><h3 data-i18n="exp_r4">Master's & Bachelor's in Agronomy</h3><p class="tl__org">Tissemsilt University · Algeria</p><p data-i18n="exp_x4">Professional Training in Marketing — FORCOM, Algeria.</p></div></div>
         </div>
       </div>
     </section>
 
     <!-- SERVICES -->
-    <section class="section section--alt" id="services">
+    <section class="section" id="services">
       <div class="container">
         <header class="section__head reveal">
-          <p class="section__eyebrow">What I do</p>
-          <h2 class="section__title">Manage, design, automate.</h2>
+          <p class="section__eyebrow" data-i18n="srv_eyebrow">What I do</p>
+          <h2 class="section__title" data-i18n="srv_title">Manage, design, automate.</h2>
         </header>
         <div class="services__grid">
-          <article class="service reveal">
-            <span class="service__icon">◇</span>
-            <h3>Project Management</h3>
-            <p>End-to-end ownership — scope, vendors, stakeholders, budgets and timelines, delivered on cost.</p>
-          </article>
-          <article class="service reveal">
-            <span class="service__icon">◐</span>
-            <h3>UI / UX & Web Design</h3>
-            <p>Clean, Apple-minded interfaces and websites in Figma & Framer — from concept to a shippable system.</p>
-          </article>
-          <article class="service reveal">
-            <span class="service__icon">⌘</span>
-            <h3>Front-End Design</h3>
-            <p>Responsive, fast, detail-obsessed builds that match the design pixel for pixel.</p>
-          </article>
-          <article class="service reveal">
-            <span class="service__icon">✦</span>
-            <h3>Generative AI</h3>
-            <p>Visuals, motion and content with Higgsfield and prompt engineering across Claude & ChatGPT.</p>
-          </article>
-          <article class="service reveal">
-            <span class="service__icon">⚙</span>
-            <h3>No-Code Automation</h3>
-            <p>AI agents and automations that remove busywork and scale the operation behind the brand.</p>
-          </article>
-          <article class="service reveal">
-            <span class="service__icon">◎</span>
-            <h3>Account Management</h3>
-            <p>Key accounts and stakeholders kept close — 90% retention, 100% compliance.</p>
-          </article>
+          <article class="service reveal"><span class="service__icon">◇</span><h3 data-i18n="srv1_t">Project Management</h3><p data-i18n="srv1_x">End-to-end ownership — scope, vendors, stakeholders, budgets and timelines, delivered on cost.</p></article>
+          <article class="service reveal"><span class="service__icon">◐</span><h3 data-i18n="srv2_t">UI / UX & Web Design</h3><p data-i18n="srv2_x">Clean, Apple-minded interfaces and websites in Figma & Framer — from concept to a shippable system.</p></article>
+          <article class="service reveal"><span class="service__icon">⌘</span><h3 data-i18n="srv3_t">Front-End Design</h3><p data-i18n="srv3_x">Responsive, fast, detail-obsessed builds that match the design pixel for pixel.</p></article>
+          <article class="service reveal"><span class="service__icon">✦</span><h3 data-i18n="srv4_t">Generative AI</h3><p data-i18n="srv4_x">Visuals, motion and content with Higgsfield and prompt engineering across Claude & ChatGPT.</p></article>
+          <article class="service reveal"><span class="service__icon">⚙</span><h3 data-i18n="srv5_t">No-Code Automation</h3><p data-i18n="srv5_x">AI agents and automations that remove busywork and scale the operation behind the brand.</p></article>
+          <article class="service reveal"><span class="service__icon">◎</span><h3 data-i18n="srv6_t">Account Management</h3><p data-i18n="srv6_x">Key accounts and stakeholders kept close — 90% retention, 100% compliance.</p></article>
         </div>
       </div>
     </section>
@@ -398,17 +352,15 @@
     <!-- CONTACT -->
     <section class="section contact" id="contact">
       <div class="container contact__inner reveal">
-        <p class="section__eyebrow">Contact</p>
-        <h2 class="contact__title">Let's build something<br /><span class="grad">clean and clever.</span></h2>
-        <p class="contact__lead">Open to project management, design, front-end and AI projects. The fastest way to reach me:</p>
+        <p class="section__eyebrow" data-i18n="ct_eyebrow">Contact</p>
+        <h2 class="contact__title" data-i18n-html="ct_title">Let's build something<br /><span class="grad">clean and clever.</span></h2>
+        <p class="contact__lead" data-i18n="ct_lead">Open to project management, design, front-end and AI projects. The fastest way to reach me:</p>
         <div class="contact__actions">
           <a href="mailto:ahmedbouamama3105@gmail.com" class="btn btn--dark">ahmedbouamama3105@gmail.com</a>
           <a href="tel:+97450314732" class="btn btn--ghost">+974 50314732</a>
-          <a href="assets/Ahmed-Bouamama-CV.pdf" download class="btn btn--ghost">Download CV ↓</a>
+          <a href="assets/Ahmed-Bouamama-CV.pdf" download class="btn btn--ghost" data-i18n="hero_cta2">Download CV ↓</a>
         </div>
-        <div class="contact__meta">
-          <span>Doha, Qatar</span><i></i><span>Arabic · English · French</span>
-        </div>
+        <div class="contact__meta"><span>Doha, Qatar</span><i></i><span>Arabic · English · French</span></div>
       </div>
     </section>
   </main>
@@ -416,10 +368,11 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>© <span id="year"></span> Ahmed Bouamama</span>
-      <span>Designed &amp; built by me.</span>
+      <span data-i18n="footer">Designed &amp; built by me.</span>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
