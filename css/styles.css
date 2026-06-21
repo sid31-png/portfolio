@@ -198,7 +198,8 @@ em{font-style:normal;color:var(--ink)}
 .compare__mock{width:78%;max-width:560px;border-radius:14px;padding:34px 30px;text-align:center}
 .compare__mock--new{background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.25)}
 .compare__mock--old{background:#e9e9ea;border:1px solid #cfcfd4}
-.compare__after{background:linear-gradient(135deg,#0a2540,#1c5a8f)}
+.compare__after{background:#ffffff}
+.compare__frame{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;background:#fff}
 .compare__before{background:repeating-linear-gradient(45deg,#d9d9dd,#d9d9dd 12px,#d2d2d7 12px,#d2d2d7 24px)}
 .compare__brand{font-size:40px;font-weight:800;color:#0a2540;letter-spacing:-.04em}
 .compare__line{height:10px;border-radius:6px;background:#e6e6ea;margin:16px auto 0;width:80%}
@@ -220,6 +221,8 @@ em{font-style:normal;color:var(--ink)}
 .compare__handle span::before{left:11px;transform:translateY(-50%);border-right:7px solid #1d1d1f}
 .compare__handle span::after{right:11px;transform:translateY(-50%);border-left:7px solid #1d1d1f}
 .compare__hint{text-align:center;color:var(--muted);font-size:13px;margin-bottom:48px}
+.rch__live{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;margin-bottom:54px}
+.rch__live-meta{color:var(--muted);font-size:14px}
 
 /* ===== Skills ===== */
 .skills__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}

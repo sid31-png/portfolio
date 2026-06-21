@@ -3,7 +3,7 @@
 Open the result with a double-click — no server needed.
 Run: python3 build-demo.py
 """
-import base64, pathlib, re
+import base64, pathlib, html as htmllib
 
 root = pathlib.Path(__file__).parent
 html = (root / "index.html").read_text(encoding="utf-8")
@@ -18,6 +18,10 @@ def data_uri(path, mime):
 # Inline assets
 html = html.replace("assets/ahmed-headshot.jpg", data_uri("assets/ahmed-headshot.jpg", "image/jpeg"))
 html = html.replace("assets/Ahmed-Bouamama-CV.pdf", data_uri("assets/Ahmed-Bouamama-CV.pdf", "application/pdf"))
+
+# Inline the live RCH site into the iframe via srcdoc (self-contained, offline)
+rch = (root / "projects/rch-saudi.html").read_text(encoding="utf-8")
+html = html.replace('src="projects/rch-saudi.html"', 'srcdoc="' + htmllib.escape(rch, quote=True) + '"')
 
 # Inline CSS + JS
 html = html.replace('<link rel="stylesheet" href="css/styles.css" />', f"<style>\n{css}\n</style>")
