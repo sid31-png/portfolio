@@ -189,7 +189,7 @@ em{font-style:normal;color:var(--ink)}
   overflow:hidden;box-shadow:var(--shadow-lg);user-select:none;margin-bottom:14px;cursor:ew-resize;
 }
 .compare__panel{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.compare__before{overflow:hidden;width:50%;border-right:2px solid #fff}
+.compare__before{clip-path:inset(0 50% 0 0)}
 .compare__tag{
   position:absolute;top:16px;left:16px;z-index:3;font-size:12px;font-weight:600;
   background:rgba(0,0,0,.55);color:#fff;padding:6px 12px;border-radius:980px;backdrop-filter:blur(6px);
@@ -374,7 +374,6 @@ em{font-style:normal;color:var(--ink)}
 [dir="rtl"] .tl{padding:26px 30px 26px 0}
 [dir="rtl"] .tl::before{left:auto;right:-7px}
 [dir="rtl"] .about__badge{left:auto;right:18px}
-[dir="rtl"] .compare__before{border-right:none;border-left:2px solid #fff}
 [dir="rtl"] .hero__title,[dir="rtl"] .contact__title{letter-spacing:normal}
 
 /* ===== Responsive ===== */

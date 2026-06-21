@@ -101,8 +101,8 @@ document.querySelectorAll('.bar').forEach(b => barIO.observe(b));
     const r = root.getBoundingClientRect();
     let pct = ((clientX - r.left) / r.width) * 100;
     pct = Math.max(0, Math.min(100, pct));
-    // account for RTL: the "before" panel is clipped from the left edge
-    before.style.width = pct + '%';
+    // reveal the "before" site from the left edge up to the handle
+    before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
     handle.style.left = pct + '%';
   }
   setPos(root.getBoundingClientRect().left + root.getBoundingClientRect().width * 0.5);
