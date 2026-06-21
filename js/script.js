@@ -1,6 +1,22 @@
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Theme (dark mode) — respects saved choice, then system preference
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle.querySelector('.theme-toggle__icon');
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  themeIcon.textContent = theme === 'dark' ? '☾' : '☀';
+}
+const saved = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+themeToggle.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  localStorage.setItem('theme', next);
+});
+
 // Nav scrolled state + scroll progress
 const nav = document.getElementById('nav');
 const progress = document.getElementById('scrollProgress');

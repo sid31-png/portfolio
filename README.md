@@ -25,13 +25,23 @@ Experience timeline · Contact.
   with a real screenshot when ready.
 - **Photo:** swap `assets/ahmed-headshot.jpg`.
 
-## Run locally
-Just open `index.html`, or serve it:
+## Quick preview — `demo.html`
+`demo.html` is a **single self-contained file** (CSS, JS, photo and CV all
+inlined). Just double-click it — opens in any browser, no server needed.
+Regenerate it after any edit with:
+```bash
+python3 build-demo.py
+```
+
+## Run locally (multi-file version)
 ```bash
 python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
 ## Deploy
-Works out of the box on **GitHub Pages**, **Vercel** or **Netlify** —
-it's a plain static site, no configuration needed.
+- **GitHub Pages:** a workflow lives in `.github/workflows/deploy.yml`.
+  In the repo go to **Settings → Pages → Source: GitHub Actions** once;
+  every push then publishes automatically.
+- **Vercel / Netlify:** import the repo (no config) — or drag `demo.html`
+  onto netlify.com/drop for an instant link.
