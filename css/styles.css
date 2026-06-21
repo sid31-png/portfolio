@@ -200,6 +200,25 @@ em{font-style:normal;color:var(--ink)}
 .compare__mock--old{background:#e9e9ea;border:1px solid #cfcfd4}
 .compare__after{background:#ffffff}
 .compare__frame{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;background:#fff}
+
+/* Faithful CSS replica of the old rch.qa hero (the "before") */
+.oldsite{position:absolute;inset:0;background:#fff;overflow:hidden;font-family:'Hanken Grotesk',sans-serif}
+.oldsite__nav{display:flex;align-items:center;justify-content:space-between;height:14%;min-height:46px;padding:0 26px;background:#fff;gap:16px}
+.oldsite__logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:24px;color:#1b1f3b;letter-spacing:-.02em}
+.oldsite__logo sup{font-size:9px;color:#e0218a}
+.oldsite__links{display:flex;gap:16px;flex:1;justify-content:center;flex-wrap:nowrap;overflow:hidden}
+.oldsite__links a{font-size:13px;color:#3a3f63;white-space:nowrap}
+.oldsite__links a:first-child{color:#e0218a}
+.oldsite__cta{background:linear-gradient(90deg,#e0218a,#b3127a);color:#fff;font-size:12px;font-weight:600;padding:8px 16px;border-radius:980px;white-space:nowrap}
+.oldsite__hero{
+  height:86%;display:flex;flex-direction:column;justify-content:center;padding-left:8%;color:#fff;
+  background:
+    linear-gradient(105deg,rgba(224,33,138,.78),rgba(150,20,110,.55) 55%,rgba(90,150,190,.35)),
+    linear-gradient(160deg,#7ec5e0 0%,#c43b8f 48%,#e0218a 100%);
+}
+.oldsite__brand{font-size:clamp(40px,7vw,86px);font-weight:800;line-height:.9;letter-spacing:-.03em}
+.oldsite__tag{font-size:clamp(18px,3vw,38px);font-weight:700;margin-top:6px}
+.oldsite__btn{margin-top:22px;align-self:flex-start;background:#1b1f3b;color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em;padding:11px 22px;border-radius:980px}
 .compare__before{background:repeating-linear-gradient(45deg,#d9d9dd,#d9d9dd 12px,#d2d2d7 12px,#d2d2d7 24px)}
 .compare__brand{font-size:40px;font-weight:800;color:#0a2540;letter-spacing:-.04em}
 .compare__line{height:10px;border-radius:6px;background:#e6e6ea;margin:16px auto 0;width:80%}
