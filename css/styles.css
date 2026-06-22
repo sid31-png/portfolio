@@ -270,6 +270,31 @@ em{font-style:normal;color:var(--ink)}
 .event-grid i:nth-child(4){animation-delay:.6s}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(.9)}50%{opacity:1;transform:scale(1)}}
 
+/* This Portfolio card */
+.card__media--portfolio{background:linear-gradient(135deg,#eef1f6,#dfe4ee);background-size:160% 160%;animation:bgShift 14s ease-in-out infinite}
+.pf-card{position:relative;width:74%;background:#fff;border-radius:16px;padding:26px 24px;box-shadow:0 26px 50px rgba(20,30,60,.18);display:flex;flex-direction:column;gap:8px}
+.pf-card__name{font-size:22px;font-weight:800;letter-spacing:-.02em;color:#1d1d1f}
+.pf-card__role{font-size:13px;color:#6e6e73}
+.pf-card__dot{position:absolute;top:22px;right:22px;width:34px;height:34px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),var(--accent-2),#ff7eb6,var(--accent));filter:blur(.5px);animation:spin 7s linear infinite}
+
+/* Government automation card */
+.card__media--auto{background:linear-gradient(135deg,#0a1f2c,#0b3a52)}
+.nodes{position:relative;width:160px;height:120px}
+.nodes i{position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 0 18px rgba(41,151,255,.8);animation:pulse 2.6s var(--ease) infinite}
+.nodes i:nth-child(1){left:0;top:50%}
+.nodes i:nth-child(2){left:46%;top:0;animation-delay:.2s}
+.nodes i:nth-child(3){left:46%;top:84%;animation-delay:.4s}
+.nodes i:nth-child(4){right:0;top:26%;animation-delay:.6s}
+.nodes i:nth-child(5){right:0;top:74%;animation-delay:.8s}
+.nodes::before{content:"";position:absolute;inset:8px;border-left:2px solid rgba(255,255,255,.22);border-top:2px solid rgba(255,255,255,.22);border-radius:14px 0 0 0;transform:rotate(0)}
+
+/* Video card */
+.card__media--video{background:linear-gradient(135deg,#1a1430,#3a1d52 60%,#7a2a5e)}
+.play{width:0;height:0;border-style:solid;border-width:22px 0 22px 36px;border-color:transparent transparent transparent #fff;filter:drop-shadow(0 6px 20px rgba(0,0,0,.4));margin-left:8px;transition:transform .35s var(--ease)}
+.card:hover .play{transform:scale(1.12)}
+.card__media--video::after{content:"";position:absolute;top:50%;left:50%;width:130px;height:130px;border:2px solid rgba(255,255,255,.35);border-radius:50%;animation:ripple 2.6s ease-out infinite}
+@keyframes ripple{0%{transform:translate(-50%,-50%) scale(.7);opacity:.8}100%{transform:translate(-50%,-50%) scale(1.4);opacity:0}}
+
 /* ===== Case study ===== */
 .case__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:54px}
 .case__col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
