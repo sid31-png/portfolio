@@ -90,3 +90,40 @@ const barIO = new IntersectionObserver((entries) => {
 }, { threshold:.5 });
 document.querySelectorAll('.bar').forEach(b => barIO.observe(b));
 
+// Showreel: preview plays when card is in view; click opens fullscreen lightbox
+(function(){
+  const card = document.getElementById('videoCard');
+  const lb = document.getElementById('lightbox');
+  if (!card || !lb) return;
+  const preview = card.querySelector('.card-video');
+  const lbVideo = document.getElementById('lightboxVideo');
+  const close = document.getElementById('lightboxClose');
+
+  if (preview){
+    const vIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => { e.isIntersecting ? preview.play().catch(()=>{}) : preview.pause(); });
+    }, { threshold:.4 });
+    vIO.observe(preview);
+  }
+
+  function open(){
+    if (!lbVideo.src && preview) lbVideo.src = preview.currentSrc || preview.getAttribute('src');
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    lbVideo.currentTime = 0;
+    lbVideo.play().catch(()=>{});
+  }
+  function shut(){
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    lbVideo.pause();
+  }
+  card.addEventListener('click', open);
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+  close.addEventListener('click', shut);
+  lb.addEventListener('click', e => { if (e.target === lb) shut(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('is-open')) shut(); });
+})();
+

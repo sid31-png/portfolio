@@ -18,6 +18,8 @@ def data_uri(path, mime):
 # Inline assets
 html = html.replace("assets/ahmed-headshot.jpg", data_uri("assets/ahmed-headshot.jpg", "image/jpeg"))
 html = html.replace("assets/Ahmed-Bouamama-CV.pdf", data_uri("assets/Ahmed-Bouamama-CV.pdf", "application/pdf"))
+html = html.replace("assets/rch-workspace-tour.png", data_uri("assets/rch-workspace-tour.png", "image/png"))
+html = html.replace("assets/showreel.mp4", data_uri("assets/showreel.mp4", "video/mp4"))
 
 # Inline the live RCH site into the iframe via srcdoc (self-contained, offline)
 rch = (root / "projects/rch-saudi.html").read_text(encoding="utf-8")

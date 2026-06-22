@@ -263,15 +263,16 @@
               <span class="card__link" data-i18n="work_c4_l">RCH · ongoing</span>
             </div>
           </div>
-          <div class="card reveal">
+          <div class="card reveal card--play" id="videoCard" role="button" tabindex="0" aria-label="Play showreel">
             <div class="card__media card__media--video">
+              <video class="card-video" src="assets/showreel.mp4" muted loop playsinline preload="metadata"></video>
               <span class="play"></span>
             </div>
             <div class="card__body">
               <div class="card__meta"><span>Video Editing</span><span>Generative Video</span></div>
               <h3 class="card__title" data-i18n="work_c5_t">Video Editing &amp; Generation</h3>
               <p class="card__text" data-i18n="work_c5_x">Short-form edits and AI-generated video for brand and social — motion that sells.</p>
-              <span class="card__link" data-i18n="work_c5_l">Showreel — soon</span>
+              <span class="card__link" data-i18n="work_c5_l">▶ Play showreel</span>
             </div>
           </div>
           <div class="card reveal">
@@ -333,6 +334,11 @@
           <h3 data-i18n="rch_block_h">The idea was mine.</h3>
           <p data-i18n="rch_block_p">RCH needed a credible presence to enter the Saudi market. I owned the whole thing — from positioning and information architecture to the visual language, the components and the live build. Every decision below started as my idea and was handled hands-on, not handed off.</p>
         </div>
+
+        <figure class="rch__visual reveal">
+          <img src="assets/rch-workspace-tour.png" alt="RCH generative brand visual — Book Your Workspace Tour" loading="lazy" />
+          <figcaption data-i18n="rch_visual">Generative brand visual I created with Higgsfield — “Book Your Workspace Tour”, in RCH's navy &amp; magenta.</figcaption>
+        </figure>
 
         <div class="case__list">
           <div class="case__item reveal"><span class="case__num">01</span><div><h4 data-i18n="rch_i1_h">Positioning & structure</h4><p data-i18n="rch_i1_p">Defined who the site speaks to, mapped the journey for government & corporate clients, and structured the pages around trust and compliance.</p></div></div>
@@ -397,6 +403,12 @@
       </div>
     </section>
   </main>
+
+  <!-- Video lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+    <video class="lightbox__video" id="lightboxVideo" controls playsinline></video>
+  </div>
 
   <footer class="footer">
     <div class="container footer__inner">
