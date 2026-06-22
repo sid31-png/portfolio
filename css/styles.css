@@ -6,8 +6,10 @@
   --muted:#6e6e73;       /* Apple secondary */
   --line:rgba(0,0,0,.08);
   --card:#ffffff;
-  --accent:#0071e3;      /* Apple blue */
+  --accent:#0071e3;      /* Apple blue (actions) */
   --accent-2:#9b6dff;
+  --qa:#6d213f;          /* Qatar Airways burgundy */
+  --qa2:#a8336a;         /* burgundy → magenta */
   --radius:22px;
   --radius-lg:30px;
   --maxw:1720px;
@@ -27,6 +29,8 @@
   --card:#161618;
   --accent:#2997ff;
   --accent-2:#bf8cff;
+  --qa:#e07aa6;          /* lighter burgundy for dark mode */
+  --qa2:#f0a8c4;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 40px rgba(0,0,0,.5);
   --shadow-lg:0 2px 6px rgba(0,0,0,.5),0 30px 70px rgba(0,0,0,.6);
   --nav-bg:rgba(0,0,0,.6);
@@ -53,7 +57,7 @@ img{max-width:100%;display:block}
 .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(24px,4vw,72px)}
 em{font-style:normal;color:var(--ink)}
 .grad{
-  background:linear-gradient(110deg,var(--accent) 0%,var(--accent-2) 100%);
+  background:linear-gradient(110deg,var(--qa) 0%,var(--qa2) 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 
@@ -95,7 +99,7 @@ em{font-style:normal;color:var(--ink)}
 }
 .nav__logo{
   font-weight:800;font-size:18px;letter-spacing:-.02em;
-  background:linear-gradient(110deg,var(--accent),var(--accent-2),var(--accent));
+  background:linear-gradient(110deg,var(--qa),var(--qa2),var(--qa));
   background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
   animation:shimmer 6s linear infinite;transition:transform .3s var(--ease)
 }
@@ -136,8 +140,12 @@ em{font-style:normal;color:var(--ink)}
   font-size:14px;color:var(--muted);font-weight:500;margin-bottom:22px;
 }
 .hero__title{
-  font-size:clamp(44px,8vw,84px);font-weight:800;line-height:1.02;
-  letter-spacing:-.04em;margin-bottom:26px;
+  font-size:clamp(48px,9vw,92px);font-weight:800;line-height:1.02;
+  letter-spacing:-.04em;margin-bottom:10px;
+}
+.hero__subtitle{
+  font-size:clamp(16px,2.4vw,23px);font-weight:600;color:var(--ink);
+  margin-bottom:26px;letter-spacing:-.01em;
 }
 .hero__lead{
   max-width:660px;margin:0 auto 34px;font-size:clamp(17px,2.2vw,21px);
@@ -175,7 +183,7 @@ em{font-style:normal;color:var(--ink)}
 .section__head{margin-bottom:64px;max-width:760px}
 .section__eyebrow{
   font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:14px;
+  color:var(--qa);margin-bottom:14px;
 }
 .section__title{font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-.03em}
 .section__sub{margin-top:18px;font-size:19px;color:var(--muted)}
@@ -199,7 +207,7 @@ em{font-style:normal;color:var(--ink)}
 .ba__frame{position:relative;aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-lg);background:#fff}
 .ba__item figcaption{color:var(--muted);font-size:14px;font-weight:500}
 .ba__arrow{font-size:30px;color:var(--accent);font-weight:700}
-.compare__frame{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;background:#fff;z-index:1}
+.compare__frame{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:auto;background:#fff;z-index:1;-webkit-overflow-scrolling:touch}
 /* fallback shown behind the live iframe (in case framing is blocked / offline) */
 .ba__ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg-alt)}
 .ba__ph span{font-size:clamp(22px,3vw,34px);font-weight:800;color:var(--muted);letter-spacing:-.02em}
@@ -312,6 +320,20 @@ em{font-style:normal;color:var(--ink)}
 .card__media--idea{background:#0a2540}
 .card__media--idea img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .card:hover .card__media--idea img{transform:scale(1.05)}
+
+/* RCH CRM/ERP card — mini dashboard in the product's navy & magenta */
+.card__media--crm{background:linear-gradient(135deg,#13283f,#1d3a59);background-size:160% 160%;animation:bgShift 14s ease-in-out infinite}
+.crm-mock{width:80%;max-width:420px;background:#f2f4f8;border-radius:12px;box-shadow:0 26px 50px rgba(0,0,0,.4);padding:14px;display:flex;flex-direction:column;gap:10px}
+.crm-mock__bar{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;color:#13283f}
+.crm-mock__bar span{width:14px;height:14px;border-radius:4px;background:#d6286b;flex:none}
+.crm-mock__kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.crm-mock__kpis i{height:38px;border-radius:8px;background:#fff;box-shadow:inset 0 0 0 1px #dde2ec;position:relative;overflow:hidden}
+.crm-mock__kpis i::after{content:"";position:absolute;left:8px;top:9px;width:42%;height:6px;border-radius:3px;background:#13283f;opacity:.85}
+.crm-mock__kpis i:nth-child(3)::after{background:#d6286b}
+.crm-mock__rows{display:flex;flex-direction:column;gap:6px}
+.crm-mock__rows u{height:9px;border-radius:3px;background:#fff;box-shadow:inset 0 0 0 1px #e3e7ef}
+.crm-mock__rows u:nth-child(2){width:86%}
+.crm-mock__rows u:nth-child(3){width:72%}
 
 /* Social icons */
 .social{display:flex;gap:14px;justify-content:center;margin-top:28px}

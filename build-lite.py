@@ -27,7 +27,7 @@ poster = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
 
 # Swap heavy embeds for the light poster
 html = html.replace(
-    '<iframe class="compare__frame" id="rchFrame" src="projects/rch-saudi.html" title="RCH Saudi — live site" loading="lazy" scrolling="no"></iframe>',
+    '<iframe class="compare__frame" id="rchFrame" src="projects/rch-saudi.html" title="RCH Saudi — live site" loading="lazy"></iframe>',
     '<img class="compare__frame" src="assets/rch-workspace-tour.png" style="object-fit:cover" alt="RCH Saudi redesign" />'
 )
 html = html.replace(
