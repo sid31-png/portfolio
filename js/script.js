@@ -90,31 +90,3 @@ const barIO = new IntersectionObserver((entries) => {
 }, { threshold:.5 });
 document.querySelectorAll('.bar').forEach(b => barIO.observe(b));
 
-// Before / After comparison slider
-(function(){
-  const root = document.getElementById('compare');
-  if (!root) return;
-  const before = document.getElementById('compareBefore');
-  const handle = document.getElementById('compareHandle');
-  let dragging = false;
-  function setPos(clientX){
-    const r = root.getBoundingClientRect();
-    let pct = ((clientX - r.left) / r.width) * 100;
-    pct = Math.max(0, Math.min(100, pct));
-    // reveal the "before" site from the left edge up to the handle
-    before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-    handle.style.left = pct + '%';
-  }
-  setPos(root.getBoundingClientRect().left + root.getBoundingClientRect().width * 0.5);
-  const start = () => dragging = true;
-  const end = () => dragging = false;
-  const move = (x) => { if (dragging) setPos(x); };
-  handle.addEventListener('mousedown', start);
-  window.addEventListener('mouseup', end);
-  window.addEventListener('mousemove', e => move(e.clientX));
-  handle.addEventListener('touchstart', start, { passive:true });
-  window.addEventListener('touchend', end);
-  window.addEventListener('touchmove', e => move(e.touches[0].clientX), { passive:true });
-  root.addEventListener('click', e => { if (e.target !== handle) setPos(e.clientX); });
-})();
-

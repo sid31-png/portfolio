@@ -268,37 +268,43 @@
           <p class="section__sub" data-i18n="rch_sub">Designing and building the digital front door for RCH's launch in Saudi Arabia.</p>
         </header>
 
-        <!-- Before / After slider — "after" shows the real live site -->
-        <div class="compare reveal" id="compare">
-          <div class="compare__panel compare__after">
-            <span class="compare__tag" data-i18n="rch_after">After — the live site</span>
-            <iframe class="compare__frame" id="rchFrame" src="projects/rch-saudi.html" title="RCH Saudi — live site" loading="lazy" scrolling="no"></iframe>
-          </div>
-          <div class="compare__panel compare__before" id="compareBefore">
-            <span class="compare__tag" data-i18n="rch_before">Before — the old rch.qa site</span>
-            <div class="oldsite" aria-hidden="true">
-              <div class="oldsite__nav">
-                <span class="oldsite__logo">
-                  <svg viewBox="0 0 24 24" width="22" height="22"><path d="M2 4l20 4-9 3-2 9-3-9z" fill="#e0218a"/></svg>
-                  RCH<sup>®</sup>
-                </span>
-                <nav class="oldsite__links">
-                  <a>Home</a><a>About Us</a><a>Our Services ▾</a><a>Case Studies</a><a>Contact Us</a><a>FAQs</a><a>Blog</a><a>🌐 English ▾</a>
-                </nav>
-                <span class="oldsite__cta">Free Consultation</span>
-              </div>
-              <div class="oldsite__hero">
-                <h3 class="oldsite__brand">RCH</h3>
-                <p class="oldsite__tag">Local Knowledge, Global Reach</p>
-                <span class="oldsite__btn">GET STARTED</span>
+        <!-- Before / After — simple, side-by-side comparison -->
+        <div class="ba reveal">
+          <figure class="ba__item">
+            <span class="ba__badge ba__badge--before" data-i18n="ba_before">Before</span>
+            <div class="ba__frame">
+              <div class="oldsite" aria-hidden="true">
+                <div class="oldsite__nav">
+                  <span class="oldsite__logo">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M2 4l20 4-9 3-2 9-3-9z" fill="#e0218a"/></svg>
+                    RCH<sup>®</sup>
+                  </span>
+                  <nav class="oldsite__links"><a>Home</a><a>About Us</a><a>Services ▾</a><a>Contact</a><a>🌐 EN ▾</a></nav>
+                  <span class="oldsite__cta">Free Consultation</span>
+                </div>
+                <div class="oldsite__hero">
+                  <h3 class="oldsite__brand">RCH</h3>
+                  <p class="oldsite__tag">Local Knowledge, Global Reach</p>
+                  <span class="oldsite__btn">GET STARTED</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="compare__handle" id="compareHandle"><span></span></div>
+            <figcaption data-i18n="ba_cap1">The existing rch.qa site</figcaption>
+          </figure>
+
+          <div class="ba__arrow" aria-hidden="true">→</div>
+
+          <figure class="ba__item">
+            <span class="ba__badge ba__badge--after" data-i18n="ba_after">After</span>
+            <div class="ba__frame">
+              <iframe class="compare__frame" id="rchFrame" src="projects/rch-saudi.html" title="RCH Saudi — live site" loading="lazy" scrolling="no"></iframe>
+            </div>
+            <figcaption data-i18n="ba_cap2">My redesign — live</figcaption>
+          </figure>
         </div>
         <div class="rch__live reveal">
           <a href="projects/rch-saudi.html" target="_blank" rel="noopener" class="btn btn--dark" data-i18n="rch_live">Open the live site ↗</a>
-          <span class="rch__live-meta" data-i18n="rch_hint">Drag the handle to compare the old look with the real site I designed.</span>
+          <span class="rch__live-meta" data-i18n="ba_meta">Built in React &amp; Tailwind · bilingual EN / AR</span>
         </div>
 
         <div class="case__grid">
