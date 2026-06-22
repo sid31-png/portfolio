@@ -15,15 +15,18 @@ def data_uri(path, mime):
     b = (root / path).read_bytes()
     return f"data:{mime};base64,{base64.b64encode(b).decode()}"
 
-# Inline assets
+# The RCH "after" panel: use the optimized poster instead of inlining the 14 MB
+# live site, so the file stays light and downloadable while the video still works.
+html = html.replace(
+    '<iframe class="compare__frame" id="rchFrame" src="projects/rch-saudi.html" title="RCH Saudi — live site" loading="lazy" scrolling="no"></iframe>',
+    '<img class="compare__frame" src="assets/rch-workspace-tour.png" style="object-fit:cover" alt="RCH Saudi redesign" />'
+)
+
+# Inline assets (small image + video so the showreel plays offline)
 html = html.replace("assets/ahmed-headshot.jpg", data_uri("assets/ahmed-headshot.jpg", "image/jpeg"))
 html = html.replace("assets/Ahmed-Bouamama-CV.pdf", data_uri("assets/Ahmed-Bouamama-CV.pdf", "application/pdf"))
 html = html.replace("assets/rch-workspace-tour.png", data_uri("assets/rch-workspace-tour.png", "image/png"))
 html = html.replace("assets/showreel.mp4", data_uri("assets/showreel.mp4", "video/mp4"))
-
-# Inline the live RCH site into the iframe via srcdoc (self-contained, offline)
-rch = (root / "projects/rch-saudi.html").read_text(encoding="utf-8")
-html = html.replace('src="projects/rch-saudi.html"', 'srcdoc="' + htmllib.escape(rch, quote=True) + '"')
 
 # Inline CSS + JS
 html = html.replace('<link rel="stylesheet" href="css/styles.css" />', f"<style>\n{css}\n</style>")
