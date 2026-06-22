@@ -93,7 +93,14 @@ em{font-style:normal;color:var(--ink)}
   max-width:var(--maxw);margin:0 auto;padding:0 clamp(24px,4vw,72px);height:60px;
   display:flex;align-items:center;justify-content:space-between;gap:24px;
 }
-.nav__logo{font-weight:700;font-size:16px;letter-spacing:-.02em}
+.nav__logo{
+  font-weight:800;font-size:18px;letter-spacing:-.02em;
+  background:linear-gradient(110deg,var(--accent),var(--accent-2),var(--accent));
+  background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 6s linear infinite;transition:transform .3s var(--ease)
+}
+.nav__logo:hover{transform:scale(1.05)}
+@keyframes shimmer{to{background-position:200% center}}
 .nav__links{display:flex;gap:30px}
 .nav__links a{font-size:14px;color:var(--muted);transition:color .2s}
 .nav__links a:hover{color:var(--ink)}
@@ -216,7 +223,7 @@ em{font-style:normal;color:var(--ink)}
 .chips span:hover{transform:translateY(-2px);border-color:transparent;background:var(--accent);color:#fff}
 
 /* ===== Work grid ===== */
-.work__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.work__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .card{
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);
   overflow:hidden;box-shadow:var(--shadow);
@@ -289,14 +296,31 @@ em{font-style:normal;color:var(--ink)}
 .nodes::before{content:"";position:absolute;inset:8px;border-left:2px solid rgba(255,255,255,.22);border-top:2px solid rgba(255,255,255,.22);border-radius:14px 0 0 0;transform:rotate(0)}
 
 /* Video card */
-.card__media--video{background:linear-gradient(135deg,#1a1430,#3a1d52 60%,#7a2a5e)}
+.card__media--video{background:#000}
 .card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .card--play{cursor:pointer}
-.play{position:relative;z-index:2;width:0;height:0;border-style:solid;border-width:20px 0 20px 32px;border-color:transparent transparent transparent #fff;filter:drop-shadow(0 6px 20px rgba(0,0,0,.5));margin-left:8px;transition:transform .35s var(--ease)}
-.play::before{content:"";position:absolute;top:50%;left:-8px;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);z-index:-1}
-.card--play:hover .play{transform:scale(1.12)}
-.card__media--video::after{content:"";position:absolute;top:50%;left:50%;width:120px;height:120px;border:2px solid rgba(255,255,255,.45);border-radius:50%;animation:ripple 2.6s ease-out infinite;z-index:1;pointer-events:none}
-@keyframes ripple{0%{transform:translate(-50%,-50%) scale(.7);opacity:.8}100%{transform:translate(-50%,-50%) scale(1.4);opacity:0}}
+.play{
+  position:relative;z-index:2;width:66px;height:66px;border-radius:50%;
+  background:rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.92);
+  display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .35s var(--ease),background .25s
+}
+.play::after{content:"";border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #fff;margin-left:4px}
+.card--play:hover .play{transform:scale(1.1);background:var(--accent);border-color:var(--accent)}
+
+/* The idea was mine card */
+.card__media--idea{background:#0a2540}
+.card__media--idea img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.card:hover .card__media--idea img{transform:scale(1.05)}
+
+/* Social icons */
+.social{display:flex;gap:14px;justify-content:center;margin-top:28px}
+.social a{
+  width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--card);
+  display:flex;align-items:center;justify-content:center;color:var(--muted);
+  transition:transform .3s var(--ease),color .3s,background .3s,border-color .3s,box-shadow .3s
+}
+.social a:hover{transform:translateY(-5px) scale(1.06);color:#fff;background:var(--accent);border-color:transparent;box-shadow:0 12px 26px rgba(0,113,227,.32)}
 
 /* Video lightbox */
 .lightbox{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);padding:24px}
@@ -392,6 +416,9 @@ em{font-style:normal;color:var(--ink)}
 [dir="rtl"] .hero__title,[dir="rtl"] .contact__title{letter-spacing:normal}
 
 /* ===== Responsive ===== */
+@media(max-width:1080px){
+  .work__grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:900px){
   .nav__links{display:none}
   .nav__links.is-open{
