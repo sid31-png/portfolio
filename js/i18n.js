@@ -1,7 +1,7 @@
 // Lightweight i18n: English is captured live from the DOM; FR + AR below.
 (function () {
   const fr = {
-    nav_about:"À propos", nav_skills:"Compétences", nav_work:"Projets", nav_exp:"Parcours", nav_services:"Services", nav_cta:"Discutons",
+    nav_about:"À propos", nav_skills:"Compétences", nav_work:"Projets", nav_exp:"Parcours", nav_services:"Services", nav_cta:"Contactez-moi",
     hero_eyebrow:"Doha, Qatar · Disponible pour des projets sélectionnés",
     hero_title:"<span class=\"grad\">Product Builder</span>",
     hero_subtitle:"UI/UX Designer · Développeur Front-End",
@@ -50,12 +50,12 @@
     srv4_t:"Design Systems", srv4_x:"Tokens, composants et patterns — une source de vérité unique pour garder produit et marque cohérents à l'échelle.",
     srv5_t:"IA générative", srv5_x:"Visuels, motion et contenu avec Higgsfield, plus le développement assisté par IA pour construire et livrer plus vite.",
     srv6_t:"Marketing & Digital", srv6_x:"Marque, sites et campagnes — le fil marketing-et-digital qui a traversé chaque poste.",
-    ct_eyebrow:"Contact", ct_title:"Construisons quelque chose<br /><span class=\"grad\">de clair et d'astucieux.</span>", ct_lead:"Ouvert aux projets produit, UI/UX, front-end et outils internes. Le plus rapide pour me joindre :",
+    ct_eyebrow:"Contact", ct_title:"Construisons quelque chose<br /><span class=\"grad\">de clair et d'astucieux.</span>", ct_lead:"Disponible pour des missions en freelance et ouvert aux postes à temps plein en produit, UI/UX et front-end. Le plus rapide pour me joindre :",
     footer:"Conçu & développé par mes soins."
   };
 
   const ar = {
-    nav_about:"نبذة", nav_skills:"المهارات", nav_work:"الأعمال", nav_exp:"الخبرة", nav_services:"الخدمات", nav_cta:"لنتحدث",
+    nav_about:"نبذة", nav_skills:"المهارات", nav_work:"الأعمال", nav_exp:"الخبرة", nav_services:"الخدمات", nav_cta:"تواصل معي",
     hero_eyebrow:"الدوحة، قطر · متاح لمشاريع مختارة",
     hero_title:"<span class=\"grad\">Product Builder</span>",
     hero_subtitle:"مصمّم UI/UX · مطوّر واجهات أمامية",
@@ -104,7 +104,7 @@
     srv4_t:"أنظمة التصميم", srv4_x:"رموز ومكوّنات وأنماط — مصدر حقيقة واحد يُبقي المنتج والعلامة متّسقين على نطاق واسع.",
     srv5_t:"الذكاء الاصطناعي التوليدي", srv5_x:"صور وحركة ومحتوى عبر Higgsfield، إضافة إلى التطوير بمساعدة الذكاء الاصطناعي للبناء والإطلاق أسرع.",
     srv6_t:"التسويق والرقمي", srv6_x:"علامة ومواقع وحملات — خيط التسويق والرقمي الذي مرّ عبر كل دور.",
-    ct_eyebrow:"تواصل", ct_title:"لنبنِ شيئاً<br /><span class=\"grad\">نظيفاً وذكياً.</span>", ct_lead:"منفتح على مشاريع المنتج وUI/UX والواجهة الأمامية والأدوات الداخلية. أسرع طريقة للوصول إليّ:",
+    ct_eyebrow:"تواصل", ct_title:"لنبنِ شيئاً<br /><span class=\"grad\">نظيفاً وذكياً.</span>", ct_lead:"متاح لمشاريع العمل الحر ومنفتح على وظائف بدوام كامل في المنتج وUI/UX والواجهة الأمامية. أسرع طريقة للوصول إليّ:",
     footer:"صُمّم وطُوّر بواسطتي."
   };
 
