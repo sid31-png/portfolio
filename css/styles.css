@@ -327,15 +327,13 @@ em{font-style:normal;color:var(--ink)}
 /* Video card */
 .card__media--video{background:#000}
 .card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.card--play{cursor:pointer}
-.play{
-  position:relative;z-index:2;width:66px;height:66px;border-radius:50%;
-  background:rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.92);
-  display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);
-  box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .35s var(--ease),background .25s
+.video-fs{
+  position:absolute;top:14px;right:14px;z-index:3;width:40px;height:40px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.4);color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);
+  transition:transform .25s var(--ease),background .25s;opacity:.85
 }
-.play::after{content:"";border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #fff;margin-left:4px}
-.card--play:hover .play{transform:scale(1.1);background:var(--accent);border-color:var(--accent)}
+.video-fs:hover{transform:scale(1.08);background:rgba(0,0,0,.6);opacity:1}
 
 /* The idea was mine card */
 .card__media--idea{background:#0a2540}
@@ -374,7 +372,7 @@ em{font-style:normal;color:var(--ink)}
 
 /* RCH generative visual */
 .rch__visual{margin:0 0 54px;display:flex;flex-direction:column;align-items:center;gap:14px}
-.rch__visual img{width:100%;max-width:680px;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);display:block}
+.rch__visual img{max-width:min(560px,100%);max-height:70vh;width:auto;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);display:block}
 .rch__visual figcaption{color:var(--muted);font-size:14px;text-align:center;max-width:540px}
 
 /* ===== Case study ===== */

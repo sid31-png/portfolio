@@ -117,40 +117,30 @@ const barIO = new IntersectionObserver((entries) => {
 }, { threshold:.5 });
 document.querySelectorAll('.bar').forEach(b => barIO.observe(b));
 
-// Showreel: preview plays when card is in view; click opens fullscreen lightbox
+// Showreel: autoplay muted loop inline; fullscreen (with sound) on demand
 (function(){
-  const card = document.getElementById('videoCard');
-  const lb = document.getElementById('lightbox');
-  if (!card || !lb) return;
-  const preview = card.querySelector('.card-video');
-  const lbVideo = document.getElementById('lightboxVideo');
-  const close = document.getElementById('lightboxClose');
+  const video = document.getElementById('showreel');
+  const fsBtn = document.getElementById('videoFs');
+  if (!video) return;
 
-  if (preview){
-    const vIO = new IntersectionObserver((entries) => {
-      entries.forEach(e => { e.isIntersecting ? preview.play().catch(()=>{}) : preview.pause(); });
-    }, { threshold:.4 });
-    vIO.observe(preview);
-  }
+  // Robust autoplay: retry play when in view (some browsers pause offscreen)
+  const play = () => video.play().catch(()=>{});
+  play();
+  const vIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => e.isIntersecting ? play() : video.pause());
+  }, { threshold:.25 });
+  vIO.observe(video);
 
-  function open(){
-    if (!lbVideo.src && preview) lbVideo.src = preview.currentSrc || preview.getAttribute('src');
-    lb.classList.add('is-open');
-    lb.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-    lbVideo.currentTime = 0;
-    lbVideo.play().catch(()=>{});
+  function goFullscreen(){
+    video.muted = false;
+    const el = video;
+    const req = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitEnterFullscreen;
+    if (req) req.call(el); else video.setAttribute('controls','');
+    play();
   }
-  function shut(){
-    lb.classList.remove('is-open');
-    lb.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-    lbVideo.pause();
-  }
-  card.addEventListener('click', open);
-  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
-  close.addEventListener('click', shut);
-  lb.addEventListener('click', e => { if (e.target === lb) shut(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('is-open')) shut(); });
+  if (fsBtn) fsBtn.addEventListener('click', e => { e.stopPropagation(); goFullscreen(); });
+  video.addEventListener('dblclick', goFullscreen);
+  // Re-mute when leaving fullscreen so the looping preview stays silent
+  document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) video.muted = true; });
 })();
 
