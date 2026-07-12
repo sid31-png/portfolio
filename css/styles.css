@@ -231,8 +231,12 @@ em{font-style:normal;color:var(--ink)}
 .compare__frame{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:auto;background:#fff;z-index:1;-webkit-overflow-scrolling:touch;object-fit:cover;transition:transform .5s var(--ease)}
 .ba__frame--link{display:block;text-decoration:none;cursor:pointer}
 .ba__frame--link:hover .compare__frame{transform:scale(1.03)}
-.ba__open{position:absolute;bottom:14px;right:14px;z-index:2;background:rgba(0,0,0,.62);color:#fff;font-size:12px;font-weight:600;padding:8px 14px;border-radius:980px;backdrop-filter:blur(6px);opacity:.92;transition:opacity .25s,transform .25s var(--ease)}
-.ba__frame--link:hover .ba__open{opacity:1;transform:translateY(-2px)}
+.ba__poster{z-index:0;object-fit:cover;object-position:top}
+#rchFrame{z-index:1}
+/* screenshot-style card media (CRM, etc.) */
+.card__media--shot{background:#13283f;padding:0}
+.card__media--shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s var(--ease)}
+.card:hover .card__media--shot img{transform:scale(1.05)}
 /* fallback shown behind the live iframe (in case framing is blocked / offline) */
 .ba__ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg-alt)}
 .ba__ph span{font-size:clamp(22px,3vw,34px);font-weight:800;color:var(--muted);letter-spacing:-.02em}

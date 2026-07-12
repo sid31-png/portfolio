@@ -17,6 +17,7 @@ def data_uri(path, mime):
 
 # Inline assets (preview screenshot + brand visual + video so it plays offline)
 html = html.replace("assets/rch-saudi-preview.jpg", data_uri("assets/rch-saudi-preview.jpg", "image/jpeg"))
+html = html.replace("assets/rch-crm-preview.jpg", data_uri("assets/rch-crm-preview.jpg", "image/jpeg"))
 html = html.replace("assets/ahmed-headshot.jpg", data_uri("assets/ahmed-headshot.jpg", "image/jpeg"))
 html = html.replace("assets/Ahmed-Bouamama-CV.pdf", data_uri("assets/Ahmed-Bouamama-CV.pdf", "application/pdf"))
 html = html.replace("assets/rch-workspace-tour.png", data_uri("assets/rch-workspace-tour.png", "image/png"))
