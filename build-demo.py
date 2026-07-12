@@ -15,11 +15,8 @@ def data_uri(path, mime):
     b = (root / path).read_bytes()
     return f"data:{mime};base64,{base64.b64encode(b).decode()}"
 
-# Inline the live RCH Saudi site into the "after" iframe via srcdoc (offline)
-rch = (root / "projects/rch-saudi.html").read_text(encoding="utf-8")
-html = html.replace('src="projects/rch-saudi.html"', 'srcdoc="' + htmllib.escape(rch, quote=True) + '"')
-
-# Inline assets (small image + video so the showreel plays offline)
+# Inline assets (preview screenshot + brand visual + video so it plays offline)
+html = html.replace("assets/rch-saudi-preview.jpg", data_uri("assets/rch-saudi-preview.jpg", "image/jpeg"))
 html = html.replace("assets/ahmed-headshot.jpg", data_uri("assets/ahmed-headshot.jpg", "image/jpeg"))
 html = html.replace("assets/Ahmed-Bouamama-CV.pdf", data_uri("assets/Ahmed-Bouamama-CV.pdf", "application/pdf"))
 html = html.replace("assets/rch-workspace-tour.png", data_uri("assets/rch-workspace-tour.png", "image/png"))

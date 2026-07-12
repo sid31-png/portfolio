@@ -24,13 +24,9 @@ img.thumbnail((900, 900))
 buf = io.BytesIO(); img.save(buf, "JPEG", quality=82, optimize=True)
 poster = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
 
-# 'After' panel: poster instead of the 15 MB live site (keeps the file small)
-html = html.replace(
-    '<iframe class="compare__frame" id="rchFrame" src="projects/rch-saudi.html" title="RCH Saudi, live site" loading="lazy"></iframe>',
-    '<img class="compare__frame" src="assets/rch-workspace-tour.png" style="object-fit:cover" alt="RCH Saudi redesign" />'
-)
-
-# Inline assets — including the real showreel video so it plays in place
+# Inline assets — the 'after' preview screenshot, the brand visual, and the
+# real showreel video so it plays in place.
+html = html.replace("assets/rch-saudi-preview.jpg", data_uri("assets/rch-saudi-preview.jpg", "image/jpeg"))
 html = html.replace("assets/rch-workspace-tour.png", poster)
 html = html.replace("assets/ahmed-headshot.jpg", data_uri("assets/ahmed-headshot.jpg", "image/jpeg"))
 html = html.replace("assets/Ahmed-Bouamama-CV.pdf", data_uri("assets/Ahmed-Bouamama-CV.pdf", "application/pdf"))
