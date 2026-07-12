@@ -3,14 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmed Bouamama — Project Manager & Front-End Designer</title>
-  <meta name="description" content="Ahmed Bouamama — Project Manager & Front-End Designer based in Doha. Blending business operations, creative technology and AI to build and scale the tools behind the operations." />
+  <title>Ahmed Bouamama — Product Builder · UI/UX Designer & Front-End Developer</title>
+  <meta name="description" content="Ahmed Bouamama — Product Builder based in Doha. I design and build products end-to-end: UI/UX, front-end and internal software (CRM/ERP), grounded in human-centred design (ISO 9241-210)." />
+  <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <link rel="canonical" href="https://sid31-png.github.io/portfolio/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%236d213f'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sid31-png.github.io/portfolio/" />
+  <meta property="og:title" content="Ahmed Bouamama — Product Builder · UI/UX & Front-End" />
+  <meta property="og:description" content="I design and build products end-to-end — UI/UX, front-end and internal software (CRM/ERP). Based in Doha." />
+  <meta property="og:image" content="https://sid31-png.github.io/portfolio/assets/ahmed-headshot.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ahmed Bouamama — Product Builder · UI/UX & Front-End" />
+  <meta name="twitter:description" content="I design and build products end-to-end — UI/UX, front-end and internal software (CRM/ERP)." />
+  <meta name="twitter:image" content="https://sid31-png.github.io/portfolio/assets/ahmed-headshot.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ahmed Bouamama",
+    "jobTitle": "Product Builder · UI/UX Designer & Front-End Developer",
+    "url": "https://sid31-png.github.io/portfolio/",
+    "image": "https://sid31-png.github.io/portfolio/assets/ahmed-headshot.jpg",
+    "email": "mailto:ahmedbouamama3105@gmail.com",
+    "telephone": "+97450314732",
+    "address": { "@type": "PostalAddress", "addressLocality": "Doha", "addressCountry": "QA" },
+    "knowsLanguage": ["Arabic", "English", "French"],
+    "knowsAbout": ["Product Design", "UI/UX Design", "Front-End Development", "Design Systems", "Human-centred design (ISO 9241-210)", "CRM/ERP"],
+    "sameAs": [
+      "https://www.linkedin.com/in/ahmed-bouamama",
+      "https://www.instagram.com/sid_boua",
+      "https://x.com/sidahmedbouama2"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <div class="fx-spotlight" id="spotlight" aria-hidden="true"></div>
+  <div class="fx-grain" aria-hidden="true"></div>
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- Navigation -->
@@ -19,7 +59,7 @@
       <a href="#top" class="nav__logo">Ahmed&nbsp;Bouamama</a>
       <nav class="nav__links" id="navLinks">
         <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#approach" data-i18n="nav_approach">Process</a>
         <a href="#work" data-i18n="nav_work">Work</a>
         <a href="#experience" data-i18n="nav_exp">Experience</a>
         <a href="#services" data-i18n="nav_services">Services</a>
@@ -58,20 +98,8 @@
           <em>human-centred design (ISO&nbsp;9241-210).</em>
         </p>
         <div class="hero__cta reveal">
-          <a href="#work" class="btn btn--dark" data-i18n="hero_cta1">View selected work</a>
+          <a href="#work" class="btn btn--dark" data-i18n="hero_cta1">See my work</a>
           <a href="assets/Ahmed-Bouamama-CV.pdf" download class="btn btn--ghost" data-i18n="hero_cta2">Download CV ↓</a>
-        </div>
-        <div class="hero__marquee reveal">
-          <div class="marquee__track">
-            <span>Figma</span><span>·</span><span>Framer</span><span>·</span>
-            <span>Higgsfield</span><span>·</span><span>Claude</span><span>·</span>
-            <span>Cursor</span><span>·</span><span>No-Code Automation</span><span>·</span>
-            <span>UI / UX</span><span>·</span>
-            <span>Figma</span><span>·</span><span>Framer</span><span>·</span>
-            <span>Higgsfield</span><span>·</span><span>Claude</span><span>·</span>
-            <span>Cursor</span><span>·</span><span>No-Code Automation</span><span>·</span>
-            <span>UI / UX</span><span>·</span>
-          </div>
         </div>
       </div>
     </section>
@@ -164,6 +192,23 @@
               <span>AI-Assisted Dev (Cursor, Claude Code)</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="section" id="approach">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__eyebrow" data-i18n="ap_eyebrow">How I work</p>
+          <h2 class="section__title" data-i18n="ap_title">From a fuzzy problem to something people use.</h2>
+          <p class="section__sub" data-i18n="ap_sub">The same loop on every product — the brief is rarely the real problem.</p>
+        </header>
+        <div class="approach__grid">
+          <article class="ap reveal"><span class="ap__n">01</span><h3 data-i18n="ap1_t">Understand the real problem</h3><p data-i18n="ap1_x">I sit with the people who'll actually use it — what's slow, what's manual, what breaks. That's where the real brief hides.</p></article>
+          <article class="ap reveal"><span class="ap__n">02</span><h3 data-i18n="ap2_t">Design the smallest thing that works</h3><p data-i18n="ap2_x">Flows first, then screens, then a design system. Clear beats clever. I prototype fast and cut whatever nobody needs.</p></article>
+          <article class="ap reveal"><span class="ap__n">03</span><h3 data-i18n="ap3_t">Build it for real</h3><p data-i18n="ap3_x">I write the front-end myself, so it ships exactly as designed — responsive, fast and accessible, not a hand-off that drifts.</p></article>
+          <article class="ap reveal"><span class="ap__n">04</span><h3 data-i18n="ap4_t">Ship, watch, refine</h3><p data-i18n="ap4_x">Real usage tells the truth. I watch how people move through it and keep iterating until it feels obvious.</p></article>
         </div>
       </div>
     </section>
@@ -366,6 +411,35 @@
           <article class="service reveal"><span class="service__icon">◑</span><h3 data-i18n="srv4_t">Design Systems</h3><p data-i18n="srv4_x">Tokens, components and patterns — a single source of truth so product and brand stay consistent at scale.</p></article>
           <article class="service reveal"><span class="service__icon">✦</span><h3 data-i18n="srv5_t">Generative AI</h3><p data-i18n="srv5_x">Visuals, motion and content with Higgsfield, plus AI-assisted development to build and ship faster.</p></article>
           <article class="service reveal"><span class="service__icon">◇</span><h3 data-i18n="srv6_t">Marketing &amp; Digital</h3><p data-i18n="srv6_x">Brand, websites and campaigns — the marketing-and-digital thread that has run through every role.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOW -->
+    <section class="section section--alt" id="now">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__eyebrow" data-i18n="now_eyebrow">Now</p>
+          <h2 class="section__title" data-i18n="now_title">What I'm sharpening.</h2>
+          <p class="section__sub" data-i18n="now_sub">A designer who codes never really stops learning — here's where my attention is these days.</p>
+        </header>
+        <div class="now__grid">
+          <div class="now__card reveal">
+            <h3 data-i18n="now_l_t">Currently learning</h3>
+            <ul class="now__list">
+              <li data-i18n="now_l1">Deeper React &amp; component architecture</li>
+              <li data-i18n="now_l2">Design tokens &amp; multi-brand theming</li>
+              <li data-i18n="now_l3">AI agents &amp; automation for real workflows</li>
+              <li data-i18n="now_l4">Motion &amp; 3D for product storytelling</li>
+            </ul>
+          </div>
+          <div class="now__card reveal">
+            <h3 data-i18n="now_t_t">Tools I reach for</h3>
+            <div class="tool-grid">
+              <span>Figma</span><span>Framer</span><span>React</span><span>Tailwind</span>
+              <span>Cursor</span><span>Claude</span><span>Higgsfield</span><span>Git</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -17,17 +17,44 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', next);
 });
 
-// Nav scrolled state + scroll progress
+// Nav scrolled state + scroll progress + hide on scroll down
 const nav = document.getElementById('nav');
 const progress = document.getElementById('scrollProgress');
+let lastY = 0;
 function onScroll(){
   const y = window.scrollY;
   nav.classList.toggle('is-scrolled', y > 8);
+  // hide when scrolling down (past hero), show when scrolling up
+  if (y > 240 && y > lastY + 4) nav.classList.add('is-hidden');
+  else if (y < lastY - 4) nav.classList.remove('is-hidden');
+  lastY = y;
   const h = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
 }
 window.addEventListener('scroll', onScroll, { passive:true });
 onScroll();
+
+// Spotlight follows the cursor (disabled for reduced motion / touch)
+const spotlight = document.getElementById('spotlight');
+if (spotlight && window.matchMedia('(hover:hover)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  window.addEventListener('pointermove', e => {
+    spotlight.style.setProperty('--mx', e.clientX + 'px');
+    spotlight.style.setProperty('--my', e.clientY + 'px');
+  }, { passive:true });
+}
+
+// Active section link in the nav
+const navLinkEls = [...document.querySelectorAll('#navLinks a')];
+const sectionIds = navLinkEls.map(a => a.getAttribute('href')).filter(h => h && h.startsWith('#'));
+const activeIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting){
+      navLinkEls.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin:'-45% 0px -50% 0px' });
+sectionIds.forEach(id => { const el = document.querySelector(id); if (el) activeIO.observe(el); });
 
 // Mobile menu
 const burger = document.getElementById('navBurger');

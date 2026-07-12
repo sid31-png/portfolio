@@ -1,7 +1,14 @@
 // Lightweight i18n: English is captured live from the DOM; FR + AR below.
 (function () {
   const fr = {
-    nav_about:"À propos", nav_skills:"Compétences", nav_work:"Projets", nav_exp:"Parcours", nav_services:"Services", nav_cta:"Contactez-moi",
+    nav_about:"À propos", nav_skills:"Compétences", nav_approach:"Process", nav_work:"Projets", nav_exp:"Parcours", nav_services:"Services", nav_cta:"Contactez-moi",
+    ap_eyebrow:"Ma méthode", ap_title:"D'un problème flou à quelque chose qu'on utilise.", ap_sub:"La même boucle sur chaque produit — le brief est rarement le vrai problème.",
+    ap1_t:"Comprendre le vrai problème", ap1_x:"Je m'assois avec ceux qui vont l'utiliser — ce qui est lent, manuel, ce qui casse. C'est là que se cache le vrai brief.",
+    ap2_t:"Concevoir le plus petit truc qui marche", ap2_x:"Les flux d'abord, puis les écrans, puis un design system. Le clair plutôt que le malin. Je prototype vite et je coupe l'inutile.",
+    ap3_t:"Le construire pour de vrai", ap3_x:"J'écris le front-end moi-même, donc ça part exactement comme conçu — responsive, rapide et accessible, sans hand-off qui dérive.",
+    ap4_t:"Livrer, observer, affiner", ap4_x:"L'usage réel dit la vérité. Je regarde comment les gens s'en servent et j'itère jusqu'à ce que ce soit évident.",
+    now_eyebrow:"En ce moment", now_title:"Ce que j'aiguise.", now_sub:"Un designer qui code n'arrête jamais vraiment d'apprendre — voici où est mon attention en ce moment.",
+    now_l_t:"J'apprends en ce moment", now_l1:"React & architecture de composants, plus en profondeur", now_l2:"Design tokens & theming multi-marques", now_l3:"Agents IA & automatisation pour de vrais workflows", now_l4:"Motion & 3D pour raconter le produit", now_t_t:"Mes outils",
     hero_eyebrow:"Doha, Qatar · Disponible pour des projets sélectionnés",
     hero_title:"<span class=\"grad\">Product Builder</span>",
     hero_subtitle:"UI/UX Designer · Développeur Front-End",
@@ -55,7 +62,14 @@
   };
 
   const ar = {
-    nav_about:"نبذة", nav_skills:"المهارات", nav_work:"الأعمال", nav_exp:"الخبرة", nav_services:"الخدمات", nav_cta:"تواصل معي",
+    nav_about:"نبذة", nav_skills:"المهارات", nav_approach:"المنهجية", nav_work:"الأعمال", nav_exp:"الخبرة", nav_services:"الخدمات", nav_cta:"تواصل معي",
+    ap_eyebrow:"طريقتي", ap_title:"من مشكلة غامضة إلى شيء يُستخدم.", ap_sub:"نفس الحلقة في كل منتج — والبريف نادراً ما يكون المشكلة الحقيقية.",
+    ap1_t:"فهم المشكلة الحقيقية", ap1_x:"أجلس مع من سيستخدمه فعلاً — ما هو بطيء ويدوي وما الذي يتعطّل. هناك يختبئ البريف الحقيقي.",
+    ap2_t:"تصميم أصغر شيء يعمل", ap2_x:"المسارات أولاً، ثم الشاشات، ثم نظام تصميم. الوضوح قبل الذكاء. أُنمذج بسرعة وأحذف ما لا يحتاجه أحد.",
+    ap3_t:"بناؤه فعلياً", ap3_x:"أكتب الواجهة الأمامية بنفسي، فيخرج كما صُمّم تماماً — متجاوب وسريع وسهل الوصول، دون تسليم ينحرف.",
+    ap4_t:"الإطلاق، المراقبة، التحسين", ap4_x:"الاستخدام الحقيقي يقول الحقيقة. أراقب كيف يتنقّل الناس وأُكرّر حتى يصبح بديهياً.",
+    now_eyebrow:"الآن", now_title:"ما أصقله.", now_sub:"المصمّم الذي يبرمج لا يتوقف عن التعلّم — هنا يتركّز اهتمامي هذه الأيام.",
+    now_l_t:"أتعلّم حالياً", now_l1:"React وبنية المكوّنات بعمق أكبر", now_l2:"Design tokens وثيمنغ متعدد العلامات", now_l3:"وكلاء الذكاء الاصطناعي والأتمتة لتدفّقات عمل حقيقية", now_l4:"موشن و3D لسرد المنتج", now_t_t:"أدواتي",
     hero_eyebrow:"الدوحة، قطر · متاح لمشاريع مختارة",
     hero_title:"<span class=\"grad\">Product Builder</span>",
     hero_subtitle:"مصمّم UI/UX · مطوّر واجهات أمامية",
