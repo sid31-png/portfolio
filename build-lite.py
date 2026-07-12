@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Build a LIGHTWEIGHT, easily-downloadable single HTML (~2 MB).
+"""Build a downloadable single HTML (~11 MB).
 
-Heavy media (the 14 MB RCH site, the 7 MB video) are NOT embedded — they are
-replaced by an optimized poster image — so the file stays small and downloads
-reliably. The full experience (live RCH site + video) lives in the zip / once
-deployed. Run: python3 build-lite.py
+The 15 MB live RCH site is swapped for an optimized poster (kept light), but the
+real showreel VIDEO is embedded so it plays in place. The full live RCH site
+lives in the zip / on the deployed URL. Run: python3 build-lite.py
 """
-import base64, io, pathlib, html as htmllib
+import base64, io, pathlib
 from PIL import Image
 
 root = pathlib.Path(__file__).parent
@@ -25,22 +24,17 @@ img.thumbnail((900, 900))
 buf = io.BytesIO(); img.save(buf, "JPEG", quality=82, optimize=True)
 poster = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
 
-# Swap heavy embeds for the light poster
+# 'After' panel: poster instead of the 15 MB live site (keeps the file small)
 html = html.replace(
-    '<iframe class="compare__frame" id="rchFrame" src="projects/rch-saudi.html" title="RCH Saudi — live site" loading="lazy"></iframe>',
+    '<iframe class="compare__frame" id="rchFrame" src="projects/rch-saudi.html" title="RCH Saudi, live site" loading="lazy"></iframe>',
     '<img class="compare__frame" src="assets/rch-workspace-tour.png" style="object-fit:cover" alt="RCH Saudi redesign" />'
 )
-html = html.replace(
-    '<video class="card-video" src="assets/showreel.mp4" muted loop playsinline preload="metadata"></video>',
-    '<img class="card-video" src="assets/rch-workspace-tour.png" alt="Showreel poster" />'
-)
-# Disable the now-empty video lightbox (no video embedded in the lite build)
-html = html.replace('class="card reveal card--play" id="videoCard"', 'class="card reveal card--play"')
 
-# Inline light assets
+# Inline assets — including the real showreel video so it plays in place
 html = html.replace("assets/rch-workspace-tour.png", poster)
 html = html.replace("assets/ahmed-headshot.jpg", data_uri("assets/ahmed-headshot.jpg", "image/jpeg"))
 html = html.replace("assets/Ahmed-Bouamama-CV.pdf", data_uri("assets/Ahmed-Bouamama-CV.pdf", "application/pdf"))
+html = html.replace("assets/showreel.mp4", data_uri("assets/showreel.mp4", "video/mp4"))
 
 # Inline CSS + JS
 html = html.replace('<link rel="stylesheet" href="css/styles.css" />', f"<style>\n{css}\n</style>")
@@ -49,4 +43,4 @@ html = html.replace('<script src="js/script.js"></script>', f"<script>\n{js}\n</
 
 out = root / "Ahmed-Bouamama-Portfolio.html"
 out.write_text(html, encoding="utf-8")
-print(f"Built {out.name} ({out.stat().st_size/1024:.0f} KB)")
+print(f"Built {out.name} ({out.stat().st_size/1024/1024:.1f} MB)")
